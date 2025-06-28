@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Rápido de LAT/HAT no Squad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a202c;
+    }
+    .font-teko {
+      font-family: 'Teko', sans-serif;
+    }
+    .card {
+      background-color: #2d3748;
+      border-left: 4px solid #f56565;
+    }
+    @media print {
+      body { background: white; color: black; }
+      .card, .bg-gray-800 { background-color: white !important; color: black !important; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body class="text-gray-100">
+  <div class="container mx-auto px-4 py-6 max-w-5xl">
+    <header class="text-center mb-8">
+      <h1 class="font-teko text-6xl font-bold text-white uppercase">Guia de LAT / HAT</h1>
+      <p class="font-teko text-3xl text-red-400">Neutralize Veículos Inimigos com Precisão</p>
+      <button onclick="window.print()" class="no-print mt-4 px-4 py-2 bg-yellow-400 text-black rounded">Imprimir / PDF</button>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Diferenças entre LAT e HAT</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-4 rounded">
+          <h3 class="font-teko text-2xl mb-2">LAT (Light AT)</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Arma mais leve e de curto alcance.</li>
+            <li>Boa contra logis, MRAPs e IFVs pela lateral.</li>
+            <li>Ideal para emboscadas rápidas.</li>
+          </ul>
+        </div>
+        <div class="card p-4 rounded">
+          <h3 class="font-teko text-2xl mb-2">HAT (Heavy AT)</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Arma de longo alcance e alto dano.</li>
+            <li>Capaz de destruir tanques e IFVs de frente.</li>
+            <li>Necessita posicionamento e timing preciso.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Táticas de Combate</h2>
+      <ul class="list-disc list-inside space-y-3">
+        <li>Evite disparar de frente para o veículo inimigo.</li>
+        <li>Alvo preferencial: traseira ou lateral dos blindados.</li>
+        <li>Reposicione-se imediatamente após disparar.</li>
+        <li>Coordene com a equipe para finalizar veículos danificados.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Dicas Avançadas</h2>
+      <ul class="list-disc list-inside space-y-3">
+        <li>Utilize o som do motor para prever a aproximação de blindados.</li>
+        <li>Dispare de locais elevados e camuflados com fácil rota de fuga.</li>
+        <li>Comunique posições inimigas após cada encontro via comando.</li>
+        <li>Prefira flanquear em conjunto com outro AT ou com suporte de FOB.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Diagramas Ilustrativos</h2>
+      <div class="bg-gray-800 p-4 rounded mb-4">
+        <p class="text-sm text-gray-400 font-mono">[Ilustração: Disparo HAT nas costas de um tanque em uma emboscada]</p>
+        <img src="https://i.imgur.com/LbTXkCq.jpeg" alt="Disparo HAT pela retaguarda" class="w-full h-auto rounded opacity-90">
+      </div>
+      <div class="bg-gray-800 p-4 rounded">
+        <p class="text-sm text-gray-400 font-mono">[Diagrama: Zona ideal de impacto lateral e traseira de blindados]</p>
+        <img src="https://i.imgur.com/bJkS8bJ.jpeg" alt="Pontos fracos de blindados" class="w-full h-auto rounded opacity-90">
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Alvos Prioritários</h2>
+      <div class="space-y-4">
+        <details class="bg-red-900/60 p-4 rounded">
+          <summary class="font-teko text-xl">1. MBTs e IFVs</summary>
+          <p class="mt-2">Blindados são a maior ameaça para sua equipe. Elimine-os com prioridade.</p>
+        </details>
+        <details class="bg-orange-900/60 p-4 rounded">
+          <summary class="font-teko text-xl">2. Logis e Transports</summary>
+          <p class="mt-2">Destruir logísticos corta o suprimento do inimigo.</p>
+        </details>
+        <details class="bg-yellow-900/60 p-4 rounded">
+          <summary class="font-teko text-xl">3. MRAPs armados</summary>
+          <p class="mt-2">Armamento leve, mas perigoso se ignorado. Fácil de destruir com LAT.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Perguntas Frequentes</h2>
+      <details class="bg-gray-800 p-4 rounded mb-2">
+        <summary class="cursor-pointer font-bold">Qual é a melhor posição para um disparo?</summary>
+        <p class="mt-2">Em uma colina ou flanco, mirando na traseira do veículo.</p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded mb-2">
+        <summary class="cursor-pointer font-bold">LAT consegue destruir um tanque?</summary>
+        <p class="mt-2">Não facilmente. Precisa de múltiplos disparos bem posicionados.</p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded">
+        <summary class="cursor-pointer font-bold">HAT tem munição limitada?</summary>
+        <p class="mt-2">Sim. Normalmente 1-2 tiros. Use com cautela.</p>
+      </details>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 text-red-400">Comparativo de Armas Anti-Blindado por Facção</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-red-800 text-white">
+              <th class="px-4 py-2 border">Facção</th>
+              <th class="px-4 py-2 border">Arma LAT</th>
+              <th class="px-4 py-2 border">Arma HAT</th>
+              <th class="px-4 py-2 border">Capacidade</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-800">
+            <tr>
+              <td class="px-4 py-2 border">US Army</td>
+              <td class="px-4 py-2 border">M72 LAW</td>
+              <td class="px-4 py-2 border">Javelin / SMAW</td>
+              <td class="px-4 py-2 border">Guiamento + Alcance Longo</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">Rússia</td>
+              <td class="px-4 py-2 border">RPG-26</td>
+              <td class="px-4 py-2 border">RPG-7V2 / Tandem</td>
+              <td class="px-4 py-2 border">Alta penetração frontal</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">GB / Canadá</td>
+              <td class="px-4 py-2 border">AT4</td>
+              <td class="px-4 py-2 border">NLAW</td>
+              <td class="px-4 py-2 border">Disparo guiado/automático</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">ME insurgente</td>
+              <td class="px-4 py-2 border">RPG-7</td>
+              <td class="px-4 py-2 border">RPG Tandem</td>
+              <td class="px-4 py-2 border">Baixo custo, média eficácia</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">China / PLA</td>
+              <td class="px-4 py-2 border">PF-89</td>
+              <td class="px-4 py-2 border">HJ-8</td>
+              <td class="px-4 py-2 border">Alto dano e guiamento óptico</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

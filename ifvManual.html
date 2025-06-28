@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia prático e visual de IFV para jogadores de Squad. Domine as táticas, munições e comunicação no campo de batalha.">
+  <title>Guia Rápido de IFV no Squad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a202c;
+    }
+    .font-teko {
+      font-family: 'Teko', sans-serif;
+    }
+    .card {
+      background-color: #2d3748;
+      border-left: 4px solid #63b3ed;
+    }
+    .card-title-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+      .card, .bg-gray-800 {
+        background-color: white !important;
+        color: black !important;
+        border-color: black !important;
+      }
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="text-gray-100">
+
+  <div class="container mx-auto px-4 py-6 md:py-10 max-w-6xl">
+
+    <header class="text-center mb-10">
+      <h1 class="font-teko text-4xl sm:text-6xl md:text-7xl font-bold text-white uppercase tracking-widest">Guia de IFV</h1>
+      <p class="font-teko text-2xl sm:text-3xl text-blue-400">Domine o campo de batalha mecanizado no Squad</p>
+      <button onclick="window.print()" class="no-print mt-4 px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300 transition">Imprimir / Salvar como PDF</button>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Funções da Tripulação</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Comandante -->
+        <div class="card p-5 rounded-xl shadow-lg">
+          <div class="flex items-center mb-3">
+            <svg class="card-title-icon text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+            <h3 class="font-teko text-3xl font-semibold">Comandante</h3>
+          </div>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Coordena com o comando e infantaria.</li>
+            <li>Identifica ameaças e rotas seguras.</li>
+            <li>Ajuda a posicionar o IFV corretamente.</li>
+          </ul>
+        </div>
+        <!-- Artilheiro -->
+        <div class="card p-5 rounded-xl shadow-lg">
+          <div class="flex items-center mb-3">
+            <svg class="card-title-icon text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            <h3 class="font-teko text-3xl font-semibold">Artilheiro</h3>
+          </div>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Opera o canhão automático e sistemas ópticos.</li>
+            <li>Seleciona a munição adequada para cada alvo.</li>
+            <li>Responsável por cobrir os setores atribuídos.</li>
+          </ul>
+        </div>
+        <!-- Motorista -->
+        <div class="card p-5 rounded-xl shadow-lg">
+          <div class="flex items-center mb-3">
+            <svg class="card-title-icon text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+            <h3 class="font-teko text-3xl font-semibold">Motorista</h3>
+          </div>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Movimenta-se com cautela e awareness tático.</li>
+            <li>Controla o uso do motor para furtividade.</li>
+            <li>Realiza recuos seguros e posicionamento ideal.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Diagrama Hull-Down IFV</h2>
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <p class="text-gray-300 text-sm mb-2 font-mono">[Imagem ilustrativa do IFV usando cobertura natural]</p>
+        <img src="https://i.imgur.com/OXcpgJn.jpeg" alt="IFV em Hull Down" class="w-full h-auto rounded opacity-90">
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-8 mb-12">
+      <div>
+        <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Tipos de Munição</h2>
+        <div class="space-y-4">
+          <details class="bg-gray-800 p-4 rounded">
+            <summary class="cursor-pointer text-green-400 font-bold text-lg">HEI (High Explosive Incendiary)</summary>
+            <p class="mt-2">Explosivo com efeito incendiário. Ideal contra infantaria e estruturas levemente blindadas. Alto dano em área.</p>
+          </details>
+          <details class="bg-gray-800 p-4 rounded">
+            <summary class="cursor-pointer text-red-400 font-bold text-lg">AP (Armor-Piercing)</summary>
+            <p class="mt-2">Penetra blindagem. Use contra veículos inimigos, especialmente laterais e traseiras de IFVs.</p>
+          </details>
+          <details class="bg-gray-800 p-4 rounded">
+            <summary class="cursor-pointer text-yellow-300 font-bold text-lg">COAX</summary>
+            <p class="mt-2">Metralhadora coaxial. Baixo consumo de munição principal. Ideal contra alvos leves.</p>
+          </details>
+        </div>
+      </div>
+      <div>
+        <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Táticas Básicas</h2>
+        <ul class="list-disc list-inside space-y-3">
+          <li>Use cobertura e Hull-Down.</li>
+          <li>Evite rotas previsíveis.</li>
+          <li>Reposicione após cada combate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Prioridade de Alvos</h2>
+      <div class="space-y-4">
+        <details class="bg-red-900/50 p-4 rounded">
+          <summary class="font-teko text-2xl">1. IFVs e MRAPs armados</summary>
+          <p class="mt-2 text-gray-100">A maior ameaça. Capazes de destruir seu veículo rapidamente. Devem ser neutralizados primeiro.</p>
+        </details>
+        <details class="bg-orange-900/50 p-4 rounded">
+          <summary class="font-teko text-2xl">2. Infantaria Anti-Carro</summary>
+          <p class="mt-2 text-gray-100">HATs e LATs representam perigo extremo mesmo isolados. Nunca subestime.</p>
+        </details>
+        <details class="bg-yellow-900/50 p-4 rounded">
+          <summary class="font-teko text-2xl">3. FOBs, HABS e estruturas</summary>
+          <p class="mt-2 text-gray-100">Interrompem o fluxo inimigo e desestruturam o front.</p>
+        </details>
+        <details class="bg-green-900/50 p-4 rounded">
+          <summary class="font-teko text-2xl">4. Infantaria comum</summary>
+          <p class="mt-2 text-gray-100">Baixa prioridade, exceto se agrupada ou em posições vantajosas.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-teko text-4xl mb-4 border-b border-gray-600 pb-2 text-blue-400">Perguntas Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-gray-800 p-4 rounded">
+          <summary class="cursor-pointer font-bold text-lg">Posso operar um IFV sozinho?</summary>
+          <p class="mt-2">Não. IFVs devem ser tripulados por pelo menos duas pessoas para uso eficaz e segurança.</p>
+        </details>
+        <details class="bg-gray-800 p-4 rounded">
+          <summary class="cursor-pointer font-bold text-lg">Qual munição usar contra FOB?</summary>
+          <p class="mt-2">HEI ou AP, dependendo da proteção da estrutura. HEI causa dano em área, bom contra sacos de areia e construções.</p>
+        </details>
+        <details class="bg-gray-800 p-4 rounded">
+          <summary class="cursor-pointer font-bold text-lg">Devo desligar o motor?</summary>
+          <p class="mt-2">Sim, ao parar para observar ou emboscar. Reduz ruído e risco de detecção.</p>
+        </details>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
