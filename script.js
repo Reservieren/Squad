@@ -79,19 +79,32 @@
                 document.getElementById(tabId).classList.add('active');
             });
         }
-
-        /** MOSTRAR/OCULTAR DETALHES DO CARD **/
-        document.querySelector('main').addEventListener('click', function(e) {
-             const toggleButton = e.target.closest('.toggle-details-btn');
-             if (!toggleButton) return;
-             
-             const details = toggleButton.nextElementSibling;
-             if (details.style.display === 'block') {
-                 details.style.display = 'none';
-                 toggleButton.textContent = 'Mostrar Detalhes';
-             } else {
-                 details.style.display = 'block';
-                 toggleButton.textContent = 'Ocultar Detalhes';
-             }
-        });
     });
+/**
+==================================================
+ LÓGICA FINAL: MOSTRAR/OCULTAR DETALHES (COM ANIMAÇÃO)
+ ==================================================
+ */
+document.querySelector('main').addEventListener('click', function(e) {
+    // 1. Verifica se o clique foi em um botão de toggle
+    const toggleButton = e.target.closest('.toggle-details-btn');
+    if (!toggleButton) return;
+
+    // 2. Encontra o 'card' pai mais próximo do botão
+    const card = toggleButton.closest('.vehicle-card, .kit-card');
+    if (!card) return;
+
+    // 3. Dentro daquele card, encontra o painel de detalhes
+    const details = card.querySelector('.details-content');
+    if (!details) return;
+
+    // 4. Apenas alterna a classe. O CSS faz todo o trabalho!
+    details.classList.toggle('details-are-visible');
+
+    // 5. Atualiza o texto do botão
+    if (details.classList.contains('details-are-visible')) {
+        toggleButton.textContent = 'Ocultar Detalhes';
+    } else {
+        toggleButton.textContent = 'Mostrar Detalhes';
+    }
+});

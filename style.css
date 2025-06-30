@@ -190,6 +190,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 20px;
+    align-items: start; /* Garante que cada card alinha do topo */
+    grid-auto-rows: auto; /* Permite que a linha se ajuste por card individual */
 }
 
 /* =========================================
@@ -205,7 +207,11 @@ h3 {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible; /* deixa o conteúdo passar */
+    position: relative; /* cria novo contexto para z-index */
+    z-index: 1; /* necessário para aparecer acima de outros */
 }
+
 
 .vehicle-card:hover, .kit-card:hover {
     transform: translateY(-5px);
@@ -272,11 +278,30 @@ h3 {
     color: var(--cor-fundo-principal);
 }
 
+/* =======================================================
+ * ANIMAÇÃO ACORDEÃO PARA OS DETALHES (CORREÇÃO DE LAYOUT)
+ * =======================================================
+*/
+
 .details-content {
-    display: none;
-    padding: 15px;
+    /* Estado inicial: escondido e com altura zero */
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0 15px;
+    border-top: none; /* A borda só aparece quando aberto..  */
+
+    /*animação suave */
+    transition: max-height 0.5s ease-out, padding 0.4s ease-out, border-top 0.4s ease-out;
+}
+
+.details-content.details-are-visible {
+    /*visível e com altura máxima */
+    max-height: 2000px; /* Um valor alto o suficiente para qualquer conteúdo */
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-top: 1px dashed var(--cor-borda);
-    background-color: var(--cor-fundo-principal);
 }
 
 .details-content h4 {
@@ -308,6 +333,8 @@ h3 {
     background-color: var(--cor-fundo-terciaria);
     cursor: zoom-in;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .details-gallery img:hover {
