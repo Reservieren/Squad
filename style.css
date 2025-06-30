@@ -1,0 +1,458 @@
+/* =========================================
+ * CONFIGURAÇÕES GERAIS E VARIÁVEIS DE COR
+ * =========================================
+*/
+:root {
+    --cor-fundo-principal: #1a1a1a;
+    --cor-fundo-secundaria: #2c2c2c;
+    --cor-fundo-terciaria: #3a3a3a;
+    --cor-borda: #444;
+    --cor-texto-principal: #e0e0e0;
+    --cor-texto-secundario: #a0a0a0;
+    --cor-destaque: #00ff6a; /* Verde HUD */
+    --cor-destaque-hover: #015522;
+    --fonte-principal: 'Roboto Mono', monospace, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Espaço para o header fixo */
+}
+
+/* Estilização da barra de rolagem */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--cor-fundo-secundaria);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--cor-destaque);
+    border-radius: 20px;
+    border: 3px solid var(--cor-fundo-secundaria);
+}
+
+main > section {
+    padding: 60px 40px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+h2 {
+    color: var(--cor-destaque);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+h3 {
+    color: var(--cor-destaque-hover);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+ * CABEÇALHO E NAVEGAÇÃO
+ * =========================================
+*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-fundo-secundaria);
+    padding: 10px 40px;
+    border-bottom: 2px solid var(--cor-destaque);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: filter 0.3s ease; /* Adicionada transição suave */
+}
+
+/* EFEITO HOVER DA LOGO CORRIGIDO */
+.logo:hover {
+    filter: brightness(1.3);
+}
+
+.header h1 {
+    color: var(--cor-destaque);
+    margin: 0;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+/* =========================================
+ * SEÇÃO VEÍCULOS: ABAS E FILTROS
+ * =========================================
+*/
+#vehicles .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.vehicle-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab-btn {
+    background-color: var(--cor-fundo-terciaria);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--cor-borda);
+}
+
+.tab-btn.active {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-principal);
+    border-color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+#search-filter, #nation-filter {
+    padding: 10px;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda);
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+}
+
+.vehicle-category-content {
+    display: none;
+}
+
+.vehicle-category-content.active {
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
+}
+
+/* =========================================
+ * CARDS DE VEÍCULOS E INFANTARIA
+ * =========================================
+*/
+/* REGRA DO CARD CORRIGIDA (SEM OVERFLOW:HIDDEN) */
+.vehicle-card, .kit-card {
+    background-color: var(--cor-fundo-secundaria);
+    border: 1px solid var(--cor-borda);
+    border-left: 5px solid var(--cor-destaque);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover, .kit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 106, 0.1);
+}
+
+.card-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vehicle-name, .kit-name {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.nation-tag {
+    background-color: var(--cor-borda);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* IMAGEM PRINCIPAL DO CARD CORRIGIDA (COM BORDER-RADIUS) */
+.card-main-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--cor-fundo-terciaria);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card-body {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body-content {
+    flex-grow: 1;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95em;
+}
+
+.toggle-details-btn {
+    width: 100%;
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+    padding: 10px;
+    cursor: pointer;
+    font-family: var(--fonte-principal);
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: 15px;
+}
+
+.toggle-details-btn:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-principal);
+}
+
+.details-content {
+    display: none;
+    padding: 15px;
+    border-top: 1px dashed var(--cor-borda);
+    background-color: var(--cor-fundo-principal);
+}
+
+.details-content h4 {
+    color: var(--cor-destaque);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.details-content ul {
+    padding-left: 20px;
+    color: var(--cor-texto-secundario);
+    margin: 0;
+    list-style-type: '» ';
+}
+.details-content li { margin-bottom: 5px; padding-left: 5px;}
+
+.details-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.details-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo-terciaria);
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-gallery img:hover {
+    transform: scale(2.5);
+    box-shadow: 0 15px 30px rgba(0, 255, 106, 0.2);
+    z-index: 10;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+ * BOTÃO VOLTAR AO TOPO
+ * =========================================
+*/
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-principal);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 999;
+}
+
+#back-to-top-btn.show {
+    display: block;
+    opacity: 0.7; /* Ajustado para um valor mais visível que 0.5 */
+}
+
+/* =========================================
+ * SEÇÃO INFANTARIA E TÁTICAS
+ * =========================================
+*/
+#infantry-tactics article {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#infantry-tactics p, #infantry-tactics ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+}
+#infantry-tactics li {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+ * RODAPÉ (FOOTER)
+ * =========================================
+*/
+.direitos {
+    background-color: var(--cor-fundo-secundaria);
+    color: var(--cor-texto-principal);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.redes a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+.redes a:hover {
+    color: var(--cor-destaque-hover);
+}
+
+/* =========================================
+ * VÍDEO RESPONSIVO
+ * =========================================
+*/
+.video-container { /* Renomeado de .video para .video-container para clareza */
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ótima adição sua! */
+    margin: 20px auto; /* Adicionado margem e centralização */
+    aspect-ratio: 16 / 9; /* Propriedade moderna e excelente */
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =======================================================
+ * ESTILO PARA O GRID DE ESPECIFICAÇÕES DOS VEÍCULOS
+ * =======================================================
+*/
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.spec-item {
+    background-color: var(--cor-fundo-terciaria);
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.8em;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.spec-value {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--cor-destaque);
+}

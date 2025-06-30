@@ -1,4 +1,4 @@
 # DAC Squad
 
 
-#Manuais de combate do Squad. 
+#Manuais de combate do Squad.
