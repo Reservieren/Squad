@@ -256,7 +256,6 @@ h3 {
 }
 
 .card-body-content {
-    flex-grow: 1;
     color: var(--cor-texto-secundario);
     font-size: 0.95em;
 }
