@@ -338,7 +338,7 @@ h3 {
 }
 
 .details-gallery img:hover {
-    transform: scale(2.5);
+    transform: scale(1.1);
     box-shadow: 0 15px 30px rgba(0, 255, 106, 0.2);
     z-index: 10;
     position: relative;
@@ -482,4 +482,71 @@ h3 {
     font-size: 1.4em;
     font-weight: bold;
     color: var(--cor-destaque);
+}
+
+/* =======================================================
+ * ESTILO PARA A JANELA MODAL (LIGHTBOX)
+ * =======================================================
+*/
+
+/* O fundo escuro (overlay) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela, mesmo com rolagem */
+    z-index: 1001; /* Fica por cima de tudo, exceto o botão de fechar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite rolagem se a imagem for muito grande */
+    background-color: rgba(0, 0, 0, 0.9); /* Preto com 90% de opacidade */
+    cursor: zoom-out;
+}
+
+/* O conteúdo da modal (a imagem) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85vh; /* Usa no máximo 85% da altura da tela */
+    /* Animação de zoom ao abrir */
+    animation-name: zoomIn;
+    animation-duration: 0.4s;
+}
+
+/* O texto (caption), se você quiser usar no futuro */
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* A animação de zoom */
+@keyframes zoomIn {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* O botão de fechar (X) */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
 }

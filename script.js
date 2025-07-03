@@ -108,3 +108,40 @@ document.querySelector('main').addEventListener('click', function(e) {
         toggleButton.textContent = 'Mostrar Detalhes';
     }
 });
+
+/**
+ * ==================================================
+ * LÓGICA PARA A JANELA MODAL DE IMAGEM (LIGHTBOX)
+ * ==================================================
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Pega os elementos da modal que criamos no HTML
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-image");
+    const captionText = document.getElementById("modal-caption");
+    const closeBtn = document.querySelector(".modal-close");
+
+    // Usa delegação de eventos para ouvir cliques em todas as imagens da galeria
+    document.querySelector('main').addEventListener('click', function(e) {
+        // Verifica se o que foi clicado foi uma imagem dentro de uma .details-gallery
+        if (e.target && e.target.tagName === 'IMG' && e.target.closest('.details-gallery')) {
+            modal.style.display = "block"; // Mostra a modal
+            modalImg.src = e.target.src; // Coloca a imagem clicada dentro da modal
+            captionText.innerHTML = e.target.alt; // Usa o texto 'alt' da imagem como legenda
+        }
+    });
+
+    // Função para fechar a modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Adiciona os eventos de clique para fechar
+    closeBtn.addEventListener('click', closeModal); // Clicar no 'X'
+    modal.addEventListener('click', function(e) {
+        // Se o clique for no fundo preto (e não na imagem), fecha a modal
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+});
